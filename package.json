@@ -1,0 +1,20 @@
+{
+  "name": "friend_finder",
+  "version": "1.0.0",
+  "description": "used to make a dating app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cgobern/FriendFinder.git"
+  },
+  "author": "Cortney Gobern",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cgobern/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Cgobern/FriendFinder#readme"
+}
