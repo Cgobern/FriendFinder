@@ -11,7 +11,13 @@ var path = require('path');
 //this sets up the basic properties forour express server
 //===============
 var app = express(); //tells node we are creating an "express" server
-var PORT = 3000;//sets initial port
+var friendsArray = require('./app/data/friends.js')
+
+console.log(friendsArray);
+
+app.set('port', process.env.PORT || 3000);//sets initial port
+
+
 
 
 //BodyParser makes it easy for our server to interpret data recieved
@@ -35,6 +41,6 @@ require('./app/routing/html-routes.js')(app);
 //LISTENER
 //"starts" the server
 //==============
- app.listen(PORT, function(){
- 	console.log("app listening on PORT:" + PORT)
+ var server = app.listen(app.get('port'),function(){
+ 	console.log("app listening on PORT:" + app.get('port'))
  });
