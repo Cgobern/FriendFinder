@@ -1,3 +1,34 @@
+var friendsArray = require('./app/data/friends.js');
+
+
+
 module.exports = function(app){
-	console.log('this is working!')
+	//GET request
+	app.get('/api/friends', function(req, res){
+		res.json(friendsArray);
+		console.log(friendsArray);
+	});
+
+	//POST request
+	app.post('/api/friends', function(req, res){
+		var new = req.body;
+		console.log(new);
+
+		friendsArray.push(new);
+
+		var scoreDifference = 0;
+		var differenceArray = [];
+
+		for(var i=0; i < friendsArray.length - 1; i++){
+			for(var x = 0; x < friendsArray[i].scores.length; x++){
+				scoreDifference += Math.abs(friendsArray[i].scores[x] - new.scores[x]);
+			}
+			differenceArray.push(scoreDifference);
+			scoreDifference = 0;
+		}
+	var match = friendsArray[differenceArray.indexOf(Math.min.apply(null, differenceArray))];
+	res.send(match);
+
+	});
+
 };
