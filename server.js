@@ -14,8 +14,8 @@ var app = express(); //tells node we are creating an "express" server
 var friendsArray = require('./app/data/friends.js')
 
 console.log(friendsArray);
-
-app.set('port', process.env.PORT || 3000);//sets initial port
+var port = process.env.PORT || 3000;
+// app.set('port', process.env.PORT || 3000);//sets initial port
 
 
 
