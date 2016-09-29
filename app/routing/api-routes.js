@@ -11,17 +11,17 @@ module.exports = function(app){
 
 	//POST request
 	app.post('/api/friends', function(req, res){
-		var new = req.body;
-		console.log(new);
+		var newUser = req.body;
+		console.log(newUser);
 
-		friendsArray.push(new);
+		friendsArray.push(newUser);
 
 		var scoreDifference = 0;
 		var differenceArray = [];
 
 		for(var i=0; i < friendsArray.length - 1; i++){
 			for(var x = 0; x < friendsArray[i].scores.length; x++){
-				scoreDifference += Math.abs(friendsArray[i].scores[x] - new.scores[x]);
+				scoreDifference += Math.abs(friendsArray[i].scores[x] - newUser.scores[x]);
 			}
 			differenceArray.push(scoreDifference);
 			scoreDifference = 0;
