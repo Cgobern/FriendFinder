@@ -1,6 +1,7 @@
 {
   "name": "friend_finder",
   "version": "1.0.0",
+  "engines": "node 6.6.0",
   "description": "used to make a dating app",
   "main": "server.js",
   "scripts": {
